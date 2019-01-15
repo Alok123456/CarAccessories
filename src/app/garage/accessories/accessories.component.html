@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row my-3">
+    <div class="col-sm border border-secondary py-2">
+      <h5>Car Selected</h5>
+      <form (submit)="addItem(value)">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="please enter car" id="name">
+        </div>
+        <p>
+          <button class="btn btn-link" type="submit" role="button" [disabled]="disable"><i class="material-icons add">add</i><b
+              style="font-size: 20px"> Add Part </b></button>
+        </p>
+
+        <div class="form-group">
+          <select class="form-control" (change)="onChange()" name="accessory" [(ngModel)]="value">
+            <option value="">Select an accessory</option>
+            <option *ngFor="let accessory of accessories;" [value]="accessory.id">
+              {{accessory.accessory}}
+            </option>
+          </select>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm border border-secondary py-0">
+      <app-selected-item [items]="items"></app-selected-item>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+     <div class="my-3">
+     <h5>Engine</h5>
+      <form>
+        <div class="form-row">
+        <div class="col">
+          <label>Power in CC</label>
+          <input type="text" class="form-control" name="power" [(ngModel)]="details.power" placeholder="power in cc">
+        </div>
+        <div class="col">
+          <label>BHP</label>
+          <input type="text" class="form-control" name="bhp" [(ngModel)]="details.bhp" placeholder="BHP">
+        </div>
+        <div class="col-5">
+          <label>Manufacturer</label>
+          <select class="form-control" name="manufacturer"  [(ngModel)]="details.selectedVal">
+            <option value=""> Select Manufacturer</option>
+            <option *ngFor="let manufact of manufacturers; let manInd = index" [value]="manInd">{{manufact}}</option>
+          </select>
+        </div>
+      </div>
+      </form>
+    </div>
